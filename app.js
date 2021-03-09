@@ -1,17 +1,8 @@
-var bht = document.querySelectorAll('#book-list ul li');
+const list = document.querySelector('#book-list ul');
 
-Array.from(listItems).forEach(function(bht){
-  bht.addEventListener('click', (e) => {
-
+list.addEventListener('click', function(e) => {
+  if(e.target.className == 'delete'){
     const li = e.target.parentElement;
-    li.parentNode.removeChild(li);
-
-  });
-});
-
-const link = document.querySelector('#page-banner a');
-
-link.addEventListener('click', function(e){
-  e.preventDefault();
-  console.log('Navigation to', e.target.textContent, 'was prevented');
+    li.removeChild(li);
+  }
 });
